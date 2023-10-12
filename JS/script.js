@@ -35,10 +35,15 @@ allLinks.forEach(function (link) {
     // scroll back to the top
     if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" });
 
+    // scroll to other link
     if (href !== "#" && href.startsWith("#")) {
       const sectionEl = document.querySelector(href);
       sectionEl.scrollIntoView({ behavior: "smooth" });
     }
+
+    // close mobile view nav
+    if (link.classList.contains("main-nav-link"))
+      headerEl.classList.toggle("nav-open");
   });
 });
 
